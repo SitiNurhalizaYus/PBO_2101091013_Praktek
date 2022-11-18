@@ -18,7 +18,7 @@ public class Warnet_Siti {
         w1.setJenisPelanggan("VIP");
         w1.setTglMasuk("18 Nov 2022");
         w1.setJamMasuk(10);
-        w1.setJamKeluar(12);
+        w1.setJamKeluar(14);
         w1.setTarif(2000);
         
         //
@@ -31,7 +31,7 @@ public class Warnet_Siti {
         
         System.out.println("\nLama            :"+w1.getLama());
         System.out.println("Tarif           :"+w1.getTarif());
-        System.out.println("Diskon          :"+w1.getTarifDiskon());
+        System.out.println("Diskon          :"+w1.getDiskon());
         System.out.println("Total Bayar     :"+w1.getTotalBayar());
     }
 }
