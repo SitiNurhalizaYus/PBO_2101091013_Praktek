@@ -18,7 +18,7 @@ public class recordWarnet_Siti {
     private int JamKeluar;
     private long Tarif;
     //area penulisan kode selanjutnya 
-    private long TarifDiskon;
+    private double Diskon;
     private int Lama;
     private long TotalBayar;
     
@@ -84,34 +84,19 @@ public class recordWarnet_Siti {
     return Tarif;
     }
     
-    public long getTarifDiskon(){
-      if((JenisPelanggan=="VIP") && (Lama>2)){
-        TarifDiskon=2/100*Tarif;        
+    public double getDiskon(){
+      if(!"VIP".equals(JenisPelanggan) || Lama <= 2){
+          Diskon=0.05*Tarif;        
       }
       else{
-        TarifDiskon=5/100*Tarif;
+          Diskon=0.02*Tarif;
       }
-    return TarifDiskon;
+    return Diskon;
     }
     
     public long getTotalBayar(){
-    TotalBayar = (Lama*Tarif-TarifDiskon);
+    TotalBayar = (long) ((Lama*Tarif)-Diskon);
     return TotalBayar;
     }
-    
-//    public double getMax(){
-//    max = (int) ((mathGrade>=englishGrade)?mathGrade:englishGrade);
-//    max = (int) (( scienceGrade>=max)? scienceGrade:max);
-//    return max;
-//    }
-//    
-//    public double getMin(){
-//    min = (int) ((mathGrade<=englishGrade)?mathGrade:englishGrade);
-//    min = (int) (( scienceGrade<=min)? scienceGrade:min);
-//    return min;
-//    }
-//   
-//    public int getStudentCount(){
-//    return studentCount;
-    }
+}
 
